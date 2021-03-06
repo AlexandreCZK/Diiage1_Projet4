@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MobileApp.Models.Categorie">
+    <Position X="5.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACACAAAAAgAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Categorie.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Users" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MobileApp.Models.User">
+    <Position X="12.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAgBAAAAAAAAAAAAAACAAAUAAAAAAQ=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Categorie" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="PointsGagnerOuPerdu" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MobileApp.Models.CriterePoint">
+    <Position X="9.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAABAAAAAAAAAAAAAAAAAAEAAAAAAQ=</HashCode>
+      <FileName>Models\CriterePoint.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="PointsGagnerOuPerdu" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="MobileApp.Models.GagnerOuPerdre">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <AssociationLine Name="CriterePoint" Type="MobileApp.Models.CriterePoint" FixedFromPoint="true">
+      <Path>
+        <Point X="7" Y="3.938" />
+        <Point X="9.25" Y="3.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAABAAQABAAAAAAAAAAQ=</HashCode>
+      <FileName>Models\GagnerOuPerdre.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="User" />
+      <Property Name="CriterePoint" />
+    </ShowAsAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,33 @@
+﻿<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:pages="clr-namespace:MobileApp.Views"
+       Title="Shell"
+       x:Class="MobileApp.AppShell">
+    
+    <!-- HEADER -->
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid HeightRequest="150">
+                <Label Text="AS Sagy Application"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+    
+    <!-- HOME -->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" 
+                Route="main">
+        <ShellContent Title="Home" 
+                      ContentTemplate="{DataTemplate pages:MainView}"/>
+    </FlyoutItem>
+    
+    <!--  -->
+    <!--DISCONNECT-->
+    
+    <MenuItem Text="Déconnexion" Clicked="ExecuteLogoutCommand"/>
+    
+    <!--<MenuItem Text="Déconnexion" Command="{Binding LogoutCommand}"/>-->
+</Shell>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+             x:Class="MobileApp.Views.GivePointPlayerView"
+             x:Name="contentPage"
+             Title="Donner des points">
+    <ContentPage.BindingContext>
+        <viewModel:GivePointPlayerVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <ListView SelectedItem="{Binding SelectCritere}"
+                      Grid.Row="0"
+                      VerticalOptions="Center"
+                      ItemsSource="{Binding Criteres}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Description}" 
+                                  TextColor="White"/>
+                                <Label Text="{Binding NombrePoint}" 
+                                  TextColor="White"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <ListView SelectedItem="{Binding SelectUser}"
+                      Grid.Row="1"
+                      VerticalOptions="Center"
+                      ItemsSource="{Binding Players}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Login}"
+                                  TextColor="White"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="{Binding SelectCritere.NombrePoint}"
+                   TextColor="White"
+                   Grid.Row="2"
+                   VerticalOptions="Center"/>
+            <Button Text="Valider" 
+                    Grid.Row="3" 
+                    VerticalOptions="Center"
+                    Command="{Binding CreateGagnerOuPerdre}"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

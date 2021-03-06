@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Xamarin/MobileApp/.vs/MobileApp
+/Xamarin/MobileApp/MobileApp/MobileApp/bin/Debug/netstandard2.0
+/Xamarin/MobileApp/MobileApp/MobileApp/obj
+/Xamarin/MobileApp/MobileApp/MobileApp.Android/bin/Debug
+/Xamarin/MobileApp/MobileApp/MobileApp.Android/obj
+/Xamarin/MobileApp/MobileApp/MobileApp.iOS/bin/iPhoneSimulator/Debug
+/Xamarin/MobileApp/MobileApp/MobileApp.iOS/obj
+/Xamarin/MobileApp/MobileApp/MobileApp.UWP/bin/x86/Debug
+/Xamarin/MobileApp/MobileApp/MobileApp.UWP/obj
+/Java/tp_diiage/bin
+/Java/tp_diiage/.settings

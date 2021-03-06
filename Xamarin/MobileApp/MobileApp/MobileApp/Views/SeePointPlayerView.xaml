@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+             x:Class="MobileApp.Views.SeePointPlayerView"
+             x:Name="contentPage"
+             Title="Vos points">
+    <ContentPage.BindingContext>
+        <viewModel:SeePointPlayerVM/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label Text="Total de points:"
+                   Grid.Row="0"
+                   HorizontalTextAlignment="Center"/>
+            <Label Text="{Binding TotalPointsPlayer}"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Red"/>
+            <ListView ItemsSource="{Binding PointsPlayer}"
+                      SelectionMode="None"
+                      Grid.Row="1"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2">
+                <ListView.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Description" FontSize="Large" HorizontalTextAlignment="Center"/>
+                        <Label Text="Points" FontSize="Large" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding CriterePoint.Description}" 
+                                       FontSize="Medium" HorizontalTextAlignment="Center"/>
+                                <Label Text="{Binding NbPoint}" 
+                                       FontSize="Medium" Grid.Column="1" HorizontalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
